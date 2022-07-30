@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7511558181221131132}
   - component: {fileID: 8483199369127569552}
   - component: {fileID: 6229907238741717256}
+  - component: {fileID: 2222380558246760636}
   m_Layer: 0
   m_Name: AR Tracking
   m_TagString: Untagged
@@ -110,3 +111,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 0}
+--- !u!64 &2222380558246760636
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371471982447591272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 4e551069fb684d74f86a9fbf5fbcb01f, type: 3}
