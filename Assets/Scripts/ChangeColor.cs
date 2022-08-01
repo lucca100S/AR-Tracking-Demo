@@ -10,12 +10,12 @@ public class ChangeColor : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         print("Entrou");
-        this.transform.parent.gameObject.GetComponent<MeshRenderer>().material = objectIn;
+        this.GetComponent<MeshRenderer>().material = objectIn;
     }
 
     void OnTriggerExit(Collider col)
     {
         print("Saiu");
-        this.transform.parent.gameObject.GetComponent<MeshRenderer>().material = objectOut;
+        this.GetComponent<MeshRenderer>().material = objectOut;
     }
 }

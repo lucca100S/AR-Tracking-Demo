@@ -28,7 +28,7 @@ public class ARControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.C))   // Starts calibration of AR Tracking based on the reference device
                 {
                     positionReference = reference.transform.position;
-                    positionAR = new Vector3(-conectionServerSocket.JsonInfo.translation_x / 50, -conectionServerSocket.JsonInfo.translation_y / 50, -conectionServerSocket.JsonInfo.translation_z / 50);
+                    positionAR = new Vector3(-conectionServerSocket.JsonInfo.translation_x / 100, -conectionServerSocket.JsonInfo.translation_y / 100, -conectionServerSocket.JsonInfo.translation_z / 100);
                     rotationReference = reference.transform.rotation;
                     Vector3 ARup = new Vector3(conectionServerSocket.JsonInfo.rotation_up_x, conectionServerSocket.JsonInfo.rotation_up_y, conectionServerSocket.JsonInfo.rotation_up_z);
                     Vector3 ARforward = new Vector3(conectionServerSocket.JsonInfo.rotation_forward_x, conectionServerSocket.JsonInfo.rotation_forward_y, conectionServerSocket.JsonInfo.rotation_forward_z);
@@ -39,7 +39,7 @@ public class ARControl : MonoBehaviour
                 conectionServerSocket.step = conectionServerSocket.speed * Time.deltaTime;
                 //print("Msg recebida:" + " Tx: " + conectionServerSocket.JsonInfo.translation_x + " ;Ty: " + conectionServerSocket.JsonInfo.translation_y + " ;Tz: " + conectionServerSocket.JsonInfo.translation_z);
 
-                ARCurrentPosition = new Vector3(-conectionServerSocket.JsonInfo.translation_x / 50, -conectionServerSocket.JsonInfo.translation_y / 50, -conectionServerSocket.JsonInfo.translation_z / 50);
+                ARCurrentPosition = new Vector3(-conectionServerSocket.JsonInfo.translation_x / 100, -conectionServerSocket.JsonInfo.translation_y / 100, -conectionServerSocket.JsonInfo.translation_z / 100);
                 transform.localPosition = (ARCurrentPosition - positionAR) + positionReference;  // Determines the new position of AR Tracking based on the refence's position during calibration
 
                 Vector3 up = new Vector3(conectionServerSocket.JsonInfo.rotation_up_x, conectionServerSocket.JsonInfo.rotation_up_y, conectionServerSocket.JsonInfo.rotation_up_z);

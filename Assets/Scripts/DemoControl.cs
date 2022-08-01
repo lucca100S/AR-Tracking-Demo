@@ -38,8 +38,10 @@ public class DemoControl : MonoBehaviour
         }else if (test.positionsAR.Count != 0)
         {
             print("Test finished!");
-            dataP = Path.Combine(Application.dataPath + "/Tests Data", "test" + ".json");
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(Application.dataPath + "/Tests Data");
+            int count = DirCount(dir);
 
+            dataP = Path.Combine(Application.dataPath + "/Tests Data", "test" + count.ToString() + ".json");
             string json = JsonUtility.ToJson(test, true);
             File.WriteAllText(dataP, json);
             test.positionsAR.Clear();
@@ -48,5 +50,18 @@ public class DemoControl : MonoBehaviour
             test.rotationsReference.Clear();
         }
 
+    }
+
+    public static int DirCount(DirectoryInfo d)  // Counts the number of json files in a folder
+    {
+        int count = 0;
+        // Add file sizes.
+        FileInfo[] fis = d.GetFiles();
+        foreach (FileInfo fi in fis)
+        {
+            if (fi.Extension.Contains("json"))
+                count++;
+        }
+        return count;
     }
 }
